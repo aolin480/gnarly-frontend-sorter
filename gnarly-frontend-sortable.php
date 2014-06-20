@@ -7,7 +7,6 @@ Author: Aaron Olin
 Author URI: http://www.aaronolin.com
 Plugin URI: http://www.aaronolin.com
 Text Domain: gnarly-sort
-Domain Path: /languages
 */
 
 if (!defined('ABSPATH'))
