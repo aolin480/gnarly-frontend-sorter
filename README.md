@@ -50,11 +50,11 @@ When you install the plugin, just find the template that controls your pages loo
 
 Explanation
 ======================
-Notice the following code:
+Notice the following code:<br>
 <code>
 
 	<div role="main" class="site-content" id="content" data-gnarly-sort="true">
-	
+
 </code> 
 
 The <strong>data-gnarly-sort='true'</strong> attribute tag. This tells the plug-in that it is the parent element of the sorter.
