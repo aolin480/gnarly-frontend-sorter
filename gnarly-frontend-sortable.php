@@ -122,8 +122,8 @@ if( !class_exists( 'Gnarly_sort' ) ) :
 				);
 				wp_localize_script( 'gnarly-frontend-sort', 'gnarly_elements', 
 					array( 
-						'container' => 	'[data-gnarly-sort=true]',						
-						'container_children'		=>	'[data-gnarly-id]'
+						'container' 			=> 	'[data-gnarly-sort=true]',						
+						'container_children'	=>	'[data-gnarly-id]'
 						
 					) 
 				);
