@@ -5,7 +5,7 @@
 
 		sort_container.sortable({
 
-		stop: function( event, ui ){			
+		update: function( event, ui ){			
 			
 			// reset / create array
 			var sort_post_ids = [];
