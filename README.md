@@ -50,7 +50,12 @@ When you install the plugin, just find the template that controls your pages loo
 
 Explanation
 ======================
-Notice on the <code><div role="main" class="site-content" id="content" data-gnarly-sort='true'></code> wrapper the <strong>data-gnarly-sort='true'</strong> attribute tag. This tells the plug-in that it is the parent element of the sorter.
+Notice the following code:
+<code>
+	<div role="main" class="site-content" id="content" data-gnarly-sort='true'>
+</code> 
+
+The <strong>data-gnarly-sort='true'</strong> attribute tag. This tells the plug-in that it is the parent element of the sorter.
 
 On each of the pages that get spit out, you must include the <strong>data-gnarly-id="58"</strong> in order to tell the sorter that it is a page item that will be drag and drop sorted. This attribute is important because it tells wordpress what position it's in when you drag and drop each element. You can echo out the page id by using the following PHP code in the loop.
 
