@@ -52,7 +52,9 @@ Explanation
 ======================
 Notice the following code:
 <code>
-	<div role="main" class="site-content" id="content" data-gnarly-sort='true'>
+
+	<div role="main" class="site-content" id="content" data-gnarly-sort="true">
+	
 </code> 
 
 The <strong>data-gnarly-sort='true'</strong> attribute tag. This tells the plug-in that it is the parent element of the sorter.
