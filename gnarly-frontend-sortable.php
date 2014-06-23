@@ -7,6 +7,7 @@ Author: Aaron Olin
 Author URI: http://www.aaronolin.com
 Plugin URI: http://www.aaronolin.com
 Text Domain: gnarly-sort
+Domain Path: /languages
 */
 
 if (!defined('ABSPATH'))
@@ -16,6 +17,8 @@ if (!defined('ABSPATH'))
 if( !class_exists( 'Gnarly_sort' ) ) :
 
 	class Gnarly_sort {				
+
+		var $is_gnarly_admin;
 		
 		protected static $_instance = null;
 
@@ -24,12 +27,15 @@ if( !class_exists( 'Gnarly_sort' ) ) :
 			define('GNARLY_PATH', trailingslashit( plugin_dir_path( __FILE__ ) ) );
 			define('GNARLY_HTTP', trailingslashit( plugins_url( '/', __FILE__ ) ) );
 
-			add_action( 'init', array( $this, 'check_gnarly_admin' ) );
+			add_action( 'init', array( $this, 'check_gnarly_admin' ) );			
+
 			add_action( 'wp_enqueue_scripts', array( $this, 'gnarly_enqueue' ) );
 
 			// ajax handling
 			add_action( "wp_ajax_gnarly_sort", array( $this, 'gnarly_ajax_sort' ) );
-			add_action( "wp_ajax_nopriv_gnarly_sort", array( $this, 'gnarly_ajax_sort' ) );		
+			add_action( "wp_ajax_nopriv_gnarly_sort", array( $this, 'gnarly_ajax_sort' ) );
+
+			
 
 		}		
 
@@ -41,13 +47,28 @@ if( !class_exists( 'Gnarly_sort' ) ) :
 		}
 
 		public function check_gnarly_admin(){
-			if( current_user_can( 'edit_posts' ) ) :				
-				define('GNARLY_ADMIN', true);
+			
+			$user_role = $this->get_user_role();
+
+			if( $user_role ) :				
+				$this->is_gnarly_admin = true;
 			endif;
 		}
 
-		public function gnarly_ajax_sort(){
+		public function get_user_role() {
 			
+			global $current_user;
+			$user_roles = $current_user->roles;			
+			$user_role = array_shift($user_roles);
+			
+			if( $user_role == 'administrator' ) :
+				return true;
+			endif;
+
+		}
+
+		public function gnarly_ajax_sort(){			
+
 			$result = $_REQUEST;		
 
 			$post_ids = $result['posts'];
@@ -85,15 +106,14 @@ if( !class_exists( 'Gnarly_sort' ) ) :
 		}
 
 		public function gnarly_enqueue() { 
+			
+			if( $this->is_gnarly_admin ) :				
 
-		    wp_enqueue_script('jquery');  
-		    wp_enqueue_script('jquery-ui-core');
-			wp_enqueue_script('jquery-ui-sortable');
-			
-			wp_register_script( 'gnarly-frontend-sort', GNARLY_HTTP . 'js/gnarly.frontend.sort.js', array( 'jquery', 'jquery-ui-core', 'jquery-ui-sortable' ), '', true ); 
-			
-			
-			if( GNARLY_ADMIN ) :				
+			    wp_enqueue_script('jquery');  
+			    wp_enqueue_script('jquery-ui-core');
+				wp_enqueue_script('jquery-ui-sortable');
+
+				wp_register_script( 'gnarly-frontend-sort', GNARLY_HTTP . 'js/gnarly.frontend.sort.js', array( 'jquery', 'jquery-ui-core', 'jquery-ui-sortable' ), '', true ); 
 				wp_enqueue_script( 'gnarly-frontend-sort' );  				
 				wp_localize_script( 'gnarly-frontend-sort', 'gnarly', 
 					array( 
