@@ -1,9 +1,8 @@
 (function($){
-	
-	
-	
-	var sort_container	= 	$('[data-gnarly-sort]');
-	var sort_item		=	'.gnarly-sort-item';
+
+	var sort_container	=	$( gnarly_elements.container );
+	var sort_item		=	gnarly_elements.container_children;
+
 		sort_container.sortable({
 
 		stop: function( event, ui ){			

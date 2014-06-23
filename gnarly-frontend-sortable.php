@@ -120,6 +120,13 @@ if( !class_exists( 'Gnarly_sort' ) ) :
 						'ajaxurl' => wp_nonce_url( admin_url( 'admin-ajax.php' ), 'do_gnarly_sort', 'gnarly_nonce' ) 
 					) 
 				);
+				wp_localize_script( 'gnarly-frontend-sort', 'gnarly_elements', 
+					array( 
+						'container' => 	'[data-gnarly-sort=true]',						
+						'container_children'		=>	'[data-gnarly-id]'
+						
+					) 
+				);
 
 			endif;
 
