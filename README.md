@@ -59,8 +59,8 @@ Notice the following code:
 
 The <strong>data-gnarly-sort='true'</strong> attribute tag. This tells the plug-in that it is the parent element of the sorter.
 
-On each of the pages that get spit out, you must include the <strong>data-gnarly-id="58"</strong> in order to tell the sorter that it is a page item that will be drag and drop sorted. This attribute is important because it tells wordpress what position it's in when you drag and drop each element. You can echo out the page id by using the following PHP pre in the loop.
+On each of the pages that get spit out, you must include the <strong>data-gnarly-id="58"</strong> in order to tell the sorter that it is a page item that will be drag and drop sorted using the page ID. This attribute is important because it tells wordpress what position it's in when you drag and drop each element by using the page ID. You can echo out the page ID by using the following PHP pre in the loop.
 
-```
-	<article data-gnarly-id="<?php echo get_the_ID(); ?>" class="page-58 page" id="page-58">	
+```PHP
+	<article data-gnarly-id="<?php the_ID(); ?>" class="page-58 page" id="page-58">	
 ```
