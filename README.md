@@ -1,7 +1,7 @@
 Gnarly Frontend Sorter
 ======================
 
-** Still in development ** - Gives user the ability to order pages on the front end of wordpress.
+** Still in development ** - Gives user the ability to order sub-pages on the parent page from the frontend of Wordpress.
 
 There are some backend plugins that do this, but I recently had a project that had about 30 parent pages, and those had sub-pages, and the sub-pages had sub-pages. We needed to find an alternative solution on the frontend because the majority of the plugins were drag and drop on the admin screen. This fixed this problem.
 
