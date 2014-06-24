@@ -5,9 +5,10 @@ Requires at least: 3.9
 Tested up to: 3.9.1
 Stable tag: 1.0
 License: GPLv3
+Donate link: https://www.paypal.com/
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Drag & Drop sorting of pages on the front end of your wordpress site. Great for sites that use get_pages to list sub pages of a parent page.
+Drag & Drop sorting of pages on the front end of your wordpress site. Great for sites that use get_pages to list sub pages of a parent page and want to visually sort the pages by menu_order.
 
 == Description ==
 
@@ -79,16 +80,18 @@ When you install the plugin, just find the template that controls your pages loo
 
 <!-- /Wordpress Twenty-Fourteen Theme Example -->
 
-Notice the following code:
+Notice the following code
 
-<div role="main" class="site-content" id="content" data-gnarly-sort="true">
+
+    <div role="main" class="site-content" id="content" data-gnarly-sort="true">
+
 
 The data-gnarly-sort='true' attribute tag. This tells the plug-in that it is the parent element of the sorter.
 
 On each of the pages that get spit out, you must include the data-gnarly-id="58" in order to tell the sorter that it is a page item that will be drag and drop sorted using the page ID. This attribute is important because it tells wordpress what position it's in when you drag and drop each element by using the page ID. You can echo out the page ID by using the following PHP pre in the loop.
 
-<article data-gnarly-id="<?php the_ID(); ?>" class="page-58 page" id="page-58"> 
 
+    <article data-gnarly-id="<?php the_ID(); ?>" class="page-58 page" id="page-58"> 
 
 
 = Minimum Requirements =
@@ -96,6 +99,20 @@ On each of the pages that get spit out, you must include the data-gnarly-id="58"
 * WordPress 3.9 or greater
 * PHP version 5.2.4 or greater
 * MySQL version 5.0 or greater
+
+== Screenshots ==
+
+1. Screenshots to come!
+
+== Frequently Asked Questions ==
+
+= I installed the plugin, I don't know what to do. =
+
+Please follow the instructions in the readme.txt file in order to set up the plugin correctly. Everyone's themes are different, and I am currently working on a better solution to specify the parent and child elements
+
+== Upgrade Notice ==
+
+* No Upgrade Notices at this time. Initial Release
 
 == Changelog ==
 
