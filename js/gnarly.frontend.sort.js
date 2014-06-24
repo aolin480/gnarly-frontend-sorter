@@ -27,7 +27,7 @@
 			
 			//console.log(sort_post_ids);
 			
-			$.ajax({
+			$.ajax({				
 				type		: "post",
 				dataType	: "json",
 				url			: gnarly.ajaxurl,

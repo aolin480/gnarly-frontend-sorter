@@ -1,11 +1,11 @@
 <?php
 /*
-Plugin Name: Gnarly :: Frontend Sort
-Version: 0.1-alpha
-Description: A Gnarly Frontend Page Sort
-Author: Aaron Olin
-Author URI: http://www.aaronolin.com
-Plugin URI: http://www.aaronolin.com
+Plugin Name: Gnarly Frontend Page Sort
+Version: 0.1
+Description: Drag & Drop sorting of pages on the front end of your wordpress site. Great for sites that use get_pages to list sub pages of a parent page.
+Author: Gnarly Apps
+Author URI: http://www.gnarlyapps.com
+Plugin URI: http://www.gnarlyapps.com
 Text Domain: gnarly-sort
 Domain Path: /languages
 */
